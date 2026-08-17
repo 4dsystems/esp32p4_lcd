@@ -1,0 +1,125 @@
+menu "4D Systems ESP32-P4 Display Selection"
+
+choice
+    prompt "Select your display series"
+
+config ESP32P4_LCD_70
+    bool "7.0-inch MIPI LCD Series"
+    select LCD_INTERFACE_MIPI
+    help
+      Select this if your 4D display is 7.0-inch
+
+config ESP32P4_LCD_80
+    bool "8.0-inch MIPI LCD Series"
+    select LCD_INTERFACE_MIPI
+    help
+      Select this if your 4D display is 8.0-inch
+
+config ESP32P4_LCD_90
+    bool "9.0-inch MIPI LCD Series"
+    select LCD_INTERFACE_MIPI
+    help
+      Select this if your 4D display is 9.0-inch
+
+config ESP32P4_LCD_101
+    bool "10.1-inch MIPI LCD Series"
+    select LCD_INTERFACE_MIPI
+    help
+      Select this if your 4D display is 10.1-inch
+
+config ESP32P4_LCD_34R
+    bool "3.4-inch Round MIPI LCD Series"
+    select LCD_INTERFACE_MIPI
+    help
+      Select this if your 4D display is round 3.4-inch
+
+config ESP32P4_LCD_40R
+    bool "4.0-inch Round MIPI LCD Series"
+    select LCD_INTERFACE_MIPI
+    help
+      Select this if your 4D display is Round 4.0-inch
+
+endchoice
+
+config ESP32P4_LCD_DOUBLE_BUFFER
+    bool "Enable double framebuffer"
+
+config ESP32P4_BACKLIGHT_AUTO_ON
+    bool "Turn on backlight on LCD initialization"
+    default n
+    help
+      Select this if you want to automatically turn on backlight on LCD initialization
+
+choice
+    prompt "Select the I2C host you want to use for onboard components"
+
+config ESP32P4_LCD_I2C0
+    bool "I2C0"
+    help
+      Select this if you wish to use I2C0 for onboard I2C components
+
+config ESP32P4_LCD_I2C1
+    bool "I2C1"
+    help
+      Select this if you wish to use I2C1 for onboard I2C components
+
+config ESP32P4_LCD_I2C0_LP
+    bool "I2C0 (LP)"
+    help
+      Select this if you wish to use LP I2C0 for onboard I2C components
+
+endchoice
+
+choice
+    prompt "Select touch type for your LCD module"
+
+config ESP32P4_LCD_CTP
+    bool "Capacitive"
+    help
+      Select this if you are using capacitive touch (CT or CT-CLB) LCD module
+
+config ESP32P4_LCD_NOTOUCH
+    bool "Non-touch"
+    help
+      Select this if you are using non-touch LCD module
+endchoice
+
+config LCD_INTERFACE_MIPI
+    bool
+    default n
+
+config ESP32P4_4D_DISPLAY_NAME
+    string
+    default "ESP32-P4-70" if ESP32P4_LCD_70
+    default "ESP32-P4-80" if ESP32P4_LCD_80
+    default "ESP32-P4-90" if ESP32P4_LCD_90
+    default "ESP32-P4-101" if ESP32P4_LCD_101
+    default "ESP32-P4-34R" if ESP32P4_LCD_34R
+    default "ESP32-P4-40R" if ESP32P4_LCD_40R
+    help
+      Internal string identifier derived from the selected display series.
+      Not user-editable.
+
+config ESP32P4_4D_LCD_WIDTH
+    int
+    default 800 if ESP32P4_LCD_70
+    default 800 if ESP32P4_LCD_80
+    default 800 if ESP32P4_LCD_90
+    default 800 if ESP32P4_LCD_101
+    default 800 if ESP32P4_LCD_34R
+    default 720 if ESP32P4_LCD_40R
+    help
+      LCD horizontal resolution in pixels, derived from selected display series.
+
+config ESP32P4_4D_LCD_HEIGHT
+    int
+    default 1280 if ESP32P4_LCD_70
+    default 1280 if ESP32P4_LCD_80
+    default 1280 if ESP32P4_LCD_90
+    default 1280 if ESP32P4_LCD_101
+    default 800 if ESP32P4_LCD_34R
+    default 720 if ESP32P4_LCD_40R
+    help
+      LCD vertical resolution in pixels, derived from selected display series.
+
+endmenu

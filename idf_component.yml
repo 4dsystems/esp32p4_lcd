@@ -1,0 +1,18 @@
+name: esp32p4_lcd
+version: 0.1.0
+description: This component handles LCD initialization for 4D Systems' ESP32-P4 series of displays
+url: https://4dsystems.com.au/
+license: Apache-2.0
+repository: https://github.com/4dsystems/esp32s3_lcd
+issues: https://forum.4dsystems.com.au/node/80187
+discussion: https://forum.4dsystems.com.au/node/80187
+dependencies:
+  idf:
+    version: '>=5.5.2'
+  espressif/esp_lcd_touch_gt911: ^1.2.1
+  espressif/esp_lcd_jd9365: ^2.0.2
+maintainers:
+- Juniel Cruz <juniel@4dsystems.com.au>
+- Paul Clements <paul@4dsystems.com.au>
+targets:
+- esp32p4
