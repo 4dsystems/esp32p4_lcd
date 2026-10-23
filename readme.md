@@ -13,9 +13,11 @@ Implementation of the LCD controller with esp_lcd component for 4D Systems' ESP3
 
 ## Add to project
 
-At the time of writing, this package is not yet publish in ESP-IDF Component Registry.
+This package has been published in the IDF Component Registry.
 
-You can install this package by following the instructions for defining a dependency from Git repository found [here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-component-manager.html#defining-dependencies-in-the-manifest).
+https://components.espressif.com/components/4dsystems/esp32p4_lcd
+
+Alternatively, you can also install this package by following the instructions for defining a dependency from Git repository found [here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-component-manager.html#defining-dependencies-in-the-manifest).
 
 Example:
 

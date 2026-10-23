@@ -1,5 +1,5 @@
 name: esp32p4_lcd
-version: 0.1.0
+version: 0.1.1
 description: This component handles LCD initialization for 4D Systems' ESP32-P4 series of displays
 url: https://4dsystems.com.au/
 license: Apache-2.0
