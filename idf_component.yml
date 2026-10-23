@@ -3,7 +3,7 @@ version: 0.1.0
 description: This component handles LCD initialization for 4D Systems' ESP32-P4 series of displays
 url: https://4dsystems.com.au/
 license: Apache-2.0
-repository: https://github.com/4dsystems/esp32s3_lcd
+repository: https://github.com/4dsystems/esp32p4_lcd
 issues: https://forum.4dsystems.com.au/node/80187
 discussion: https://forum.4dsystems.com.au/node/80187
 dependencies:
