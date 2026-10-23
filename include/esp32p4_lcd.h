@@ -54,7 +54,9 @@
         .scl_io_num = LCD_BOARD_SCL_GPIO_NUM,           \
         .sda_io_num = LCD_BOARD_SDA_GPIO_NUM,           \
         .glitch_ignore_cnt = 7,                         \
-        .flags.enable_internal_pullup = true,           \
+        .flags = {                                      \
+            .enable_internal_pullup = true,             \
+        },                                              \
     }
 
 /**

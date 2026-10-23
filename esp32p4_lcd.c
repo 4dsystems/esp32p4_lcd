@@ -124,7 +124,7 @@ esp_err_t esp32p4_lcd_full_init(esp_lcd_panel_handle_t *ret_panel)
     return ESP_OK;
 }
 
-#if !defined(CONFIG_ESP32S3_LCD_NOTOUCH)
+#if !defined(CONFIG_ESP32P4_LCD_NOTOUCH)
 /* i2c_bus: caller's already-initialized bus, not created or deleted here. */
 esp_err_t esp32p4_lcd_touch_init(i2c_master_bus_handle_t i2c_bus, esp_lcd_touch_handle_t *tp) {
     esp_err_t ret = ESP_OK;
