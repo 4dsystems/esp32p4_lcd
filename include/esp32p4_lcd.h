@@ -59,18 +59,24 @@
         },                                              \
     }
 
+#if defined(CONFIG_ESP32P4_SELECTS_REV_LESS_V3)
+#define ESP32P4_LCD_MIPI_DSI_PHY_CLK_SRC    MIPI_DSI_PHY_PLLREF_CLK_SRC_DEFAULT_LEGACY
+#else
+#define ESP32P4_LCD_MIPI_DSI_PHY_CLK_SRC    MIPI_DSI_PHY_PLLREF_CLK_SRC_DEFAULT
+#endif
+
 /**
  * @brief MIPI-DSI bus configuration structure
  *
  */
-#define ESP32P4_LCD_MIPI_DSI_CONFIG()                   \
-    {                                                   \
-        .bus_id = 0,                                    \
-        .num_data_lanes = LCD_DSI_LANE_NUM,             \
-        .phy_clk_src = MIPI_DSI_PHY_CLK_SRC_DEFAULT,    \
-        .lane_bit_rate_mbps = LCD_DSI_LANE_BIT_RATE,    \
+#define ESP32P4_LCD_MIPI_DSI_CONFIG()                       \
+    {                                                       \
+        .bus_id = 0,                                        \
+        .num_data_lanes = LCD_DSI_LANE_NUM,                 \
+        .phy_clk_src = ESP32P4_LCD_MIPI_DSI_PHY_CLK_SRC,    \
+        .lane_bit_rate_mbps = LCD_DSI_LANE_BIT_RATE,        \
     }
-
+    
 /**
  * @brief MIPI-DBI panel IO configuration structure
  *
